@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Task</title>
+  </head>
+  <body>
+    <h2>Buy fruits</h2>
+
+    <div>
+        <form action="#" method="post" id="form">
+      <label for="username">Please entre your name :- 
+        <input type="text" id="username" placeholder="Full Name" />
+      </label>
+    </div><br>
+
+    <div class="price-range">
+        <label for="lower-range">Lower-range
+            <input type="radio" name="fruits-range" id="lower-range" value="lower-range">
+        </label>
+        <label for="medium-range">Medium-range
+            <input type="radio" name="fruits-range" id="medium-range" value="medium-range">
+        </label>
+        <label for="higher-range">Higher-range
+            <input type="radio" name="fruits-range" id="higher-range" value="higher-range">
+        </label>
+    </div><br>
+
+    <div class="fruits">
+        <label for="orange">Orange
+            <input type="checkbox" name="orange" id="orange" value="orange" >
+        </label>
+
+        <label for="apple">Apple
+            <input type="checkbox" name="apple" id="apple" value="apple">
+        </label>
+
+        <label for="watermelon">Watermelon
+            <input type="checkbox" name="watermelon" id="watermelon" value="watermelon" >
+        </label>
+
+         <label for="kiwi">Kiwi
+            <input type="checkbox" name="kiwi" id="kiwi" value="kiwi" >
+        </label>
+    </div><br>
+
+    <div class="select">
+        <select name="select-day" id="select-day">
+          <option value="">Select delivery day</option>
+          <option value="monday">monday</option>
+          <option value="tuesday">tuesday</option>
+          <option value="wednesday">wednesday</option>
+          <option value="thursday">thursday</option>
+        </select>
+      </div><br>
+
+    <div>
+      <input type="submit" value="submit" id="btn">
+    </div>
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+      const form = document.querySelector("#form")
+    const userName = document.querySelector("#username");
+    const output = document.querySelector("#output");
+    const btn = document.querySelector("#btn")
+
+    const priceRanges = document.querySelectorAll("input[name='fruits-range']");
+const selectDeliveryDay = document.querySelector("#select-day");
+
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+     let selectedRange;
+    for(const priceRange of priceRanges){
+        if(priceRange.checked){
+            selectedRange = priceRange.value;
+        }
+    }
+    const fruits = document.querySelectorAll("input[type='checkbox']:checked");
+    const selectBoxes = [];
+    fruits.forEach((fruit)=>{
+        selectBoxes.push(fruit.value)
+    });
+    selectBoxes.join(" ")
+
+
+
+    output.innerHTML = `Hello ${userName.value}, You have selected ${selectedRange} for fruits, and your selected fruits are${selectBoxes}, we will deliver your fruits as per your chosen day ${selectDeliveryDay.value} of this week || Thanks for shopping with fruitsCart ||`;
+})
+
+
+
+    
+
+
+
+
+
+    </script>
+  </body>
+</html>
