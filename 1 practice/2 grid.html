@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+        list-style: none;
+      }
+
+      .main-Container {
+        background-color: aqua;
+        width: 100vw;
+        height: 100%;
+        padding: 1rem;
+      }
+
+      .container div {
+        background-color: black;
+        color: white;
+        width: 90%;
+        height: 10rem;
+        text-align: center;
+        margin: 0.2rem;
+      }
+
+      @media only screen and (min-width: 600px) {
+        .main-Container {
+          background-color: yellow;
+          width: 100%;
+          height: 50rem;
+        }
+
+        .container {
+          vertical-align: top;
+          background-color: pink;
+          height: 40rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          grid-template-rows: 8rem 8rem 8rem 8rem;
+          gap: 0.5rem;
+        }
+
+        .container div {
+          width: 100%;
+          height: 100%;
+        }
+
+        .one {
+          grid-column: 2/6;
+          grid-row: 1/2;
+        }
+
+        .two {
+          grid-column: 1/2;
+          grid-row: 1/2;
+        }
+        .three {
+          grid-row: 2/3;
+          grid-column: 1/3;
+        }
+
+        .four {
+          grid-row: 2/3;
+          grid-column: 3/6;
+        }
+
+        .five {
+          grid-row: 3/4;
+          grid-column: 1/3;
+        }
+
+        .six {
+          grid-row: 3/4;
+          grid-column: 3/4;
+        }
+        .seven {
+          grid-row: 3/4;
+          grid-column: 4/6;
+        }
+        .eight {
+          grid-row: 4/5;
+          grid-column: 1/6;
+        }
+      }
+    </style>
+    <title>Grid</title>
+  </head>
+  <body>
+    <div class="main-Container">
+      <div class="container">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="five">5</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="six">6</div>
+        <div class="eight">8</div>
+        <div class="seven">7</div>
+      </div>
+    </div>
+  </body>
+</html>
